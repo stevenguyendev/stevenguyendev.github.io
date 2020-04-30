@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CERTIFICATION SHOPPING</title>
+    <meta lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .img01 {
+            width: 70px;
+        }
+        .hero-image {
+            background: url("https://www.jll.pe/images/architecture/exterior/why-glass-remains-the-top-choice-for-todays-skyscrapers.png") no-repeat center;
+            background-size: cover;
+            margin-bottom: -10px;
+        }
+        .text-color {
+            color: orange;
+            font-size: 50px;
+        }
+        .collapse: {
+            color: white;
+        }
+        .dropdown-submenu{
+            position: relative;
+        }
+        .dropdown-menu .dropdown-submenu{
+            top: 15px;
+            left: 100%;
+            margin-top: -1px;
+        }
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            opacity: 0.7;
+        }
+        @media screen and (min-width: 600px) {
+            .p01 {
+                font-size: 3vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero-image text-center">
+        <h1 class="text-color">WHEN YOU NEED TO BE SURE</h1>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-secondary sticky-top">
+        <a class="navbar-brand" href="#">
+            <img class="img01" src="img/logo.png" alt="SGS Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <i class="fa fa-bars"></i>Our Services
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#" data-toggle="dropdown">Furniture testing 
+                            <i class="fa fa-caret-right"></i>
+                        </a>
+                            <div class="dropdown-submenu dropdown-menu">
+                                <a class="dropdown-item" href="#">US standard</a>
+                                <a class="dropdown-item" href="#">EU standard</a>
+                                <a class="dropdown-item" href="#">Other market</a>
+                            </div>
+                        <a class="dropdown-item" href="#">Toy testing</a>
+                        <a class="dropdown-item" href="#">Transit testing</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <i class="fa fa-briefcase"></i>Our Company
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Asia Countries</a>
+                        <a class="dropdown-item" href="#">Africa Countries</a>
+                        <a class="dropdown-item" href="#">Europe Countries</a>
+                        <a class="dropdown-item" href="#">North America Countries</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-bolt"></i>Promotion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-comment"></i>Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-check"></i>Pay Check</a>
+                </li>
+            </ul>
+            <form class="form-inline" action="/action_page.php">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-warning" type="submit">Go</button>
+            </form>
+        </div>
+    </nav>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/crs1.jpg" alt="furniture living room">
+                <div class="carousel-caption">
+                    <p class="p01 text-warning">For furniture, we have many standards for testing</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/crs2.jpg" alt="toy testing">
+                <div class="carousel-caption">
+                    <p class="p01 text-warning">To make sure safety of toys for children</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/crs3.jpg" alt="contact us">
+                <div class="carousel-caption">
+                    <p class="p01 text-warning">Contact us when you need an assistant</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <i class="carousel-control-prev-icon"></i>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <i class="carousel-control-next-icon"></i>
+        </a>
+    </div>
+</body>
+</html>
