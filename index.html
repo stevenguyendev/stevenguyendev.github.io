@@ -1,43 +1,171 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>SHOPPING WEBSITE</title>
-        <meta lang="en-US">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>SHOPPING</h1>
-            <p>MUA SẮM THOẢ THÍCH, KHÔNG LO VỀ GIÁ</p>
-        </header>
-        <nav class="navbar navbar-expand-sm bg-light">
-            <ul>
-                <li>
-                    <a href="#"><i class="fa fa-home"></i>Home</a> 
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bars"></i>Category</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-briefcase"></i>Mall</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bolt"></i>Flash sale</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-comment"></i>Contact</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-check"></i>Pay</a>
-                </li>
-            </ul>
 
-        </nav>
-    </body>
+<head>
+    <title>CV Profile</title>
+    <meta lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <style>
+        html,
+        .navbar,
+        .sec02 {
+            background-color: black;
+        }
+        .container-fluid,
+        .container {
+            font-size: 30px;
+        }
+        .hr {
+            color: black;
+        }
+        .h2 {
+            font-size: 40px;
+        }
+        .progress,
+        .progess-bar {
+            height: 50px;
+        }
+        .pro01 {
+            width: 80%;
+        }
+        .pro02 {
+            width: 50%;
+        }
+        .pro03 {
+            width: 50%;
+        }
+        .pro04 {
+            width: 100%;
+        }
+        .ft {
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm" id="navbar">
+        <div class="container">
+            <a class="navbar-brand text-light" href="index.html">Steve</a>
+            <button class="navbar-toggler text-warning" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav nav ml-auto">
+                    <li class="nav-item"><a href="#home-section" class="nav-link text-light"><span>Home</span></a></li>
+                    <li class="nav-item"><a href="#about-section" class="nav-link text-light"><span>About</span></a>
+                    </li>
+                    <li class="nav-item"><a href="#skills-section" class="nav-link text-light"><span>Skills</span></a>
+                    </li>
+                    <li class="nav-item"><a href="#projects-section"
+                            class="nav-link text-light"><span>Projects</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="home-section">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center flex-wrap">
+                <div class="align-self-center text-center">
+                    <h1>HELLO!</h1>
+                    <p>I'm Kha, I'm Web Front End Developer.</p>
+                    <p>Nice to meet you!</p>
+                </div>
+                <div>
+                    <img src="lab 2/cv.jpg" alt="CV photo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="about-section">
+        <div class="container-fluid sec02">
+            <div class="row justify-content-sm-center text-light">
+                <h2 class="h2">About me</h2>
+                <ul>
+                    <li class="d-flex"><span>Name: Nguyen Anh Kha (Steve Nguyen)</span></li>
+                    <li class="d-flex"><span>Date of birth: April 20, 1993</span></li>
+                    <li class="d-flex"><span>Address: Ho Chi Minh city</span></li>
+                    <li class="d-flex"><span>Email: stevenguyen20041993@gmail.com</span></li>
+                    <li class="d-flex"><span>Phone: +84 374 323 424</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="skills-section">
+        <div>
+            <h2 class="h2 text-center">My skills</h2>
+        </div>
+        <br>
+        <div class="container">
+            <div class="progress">
+                <div class="progress-bar pro01 bg-dark">Office skills</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="progress">
+                <div class="progress-bar pro02 bg-dark">HTML</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="progress">
+                <div class="progress-bar pro03 bg-dark">CSS</div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="progress">
+                <div class="progress-bar pro04 bg-dark">JavaScript</div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <section id="projects-section">
+        <div class="container-fluid sec02">
+            <div>
+                <h2 class="h2 text-center text-light">My Projects</h2>
+            </div>
+            <br>
+            <div class="card-deck">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text text-warning">Project 1</p>
+                        <a href="/project 1/project1.html" class="btn stretched-link" target="_blank"></a>
+                    </div>
+                </div>
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text text-warning">Project 2</p>
+                        <a href="#" class="btn stretched-link"></a>
+                    </div>
+                </div>
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text text-warning">Project 3</p>
+                        <a href="#" class="btn stretched-link"></a>
+                    </div>
+                </div>
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <p class="card-text text-warning">Project 4</p>
+                        <a href="#" class="btn stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="ft">
+        <p class="text-center">Copyright 2020. <span>This template was made with <i class="far fa-heart"></i> by Steve</span></p>
+    </footer>
+</body>
 </html>
