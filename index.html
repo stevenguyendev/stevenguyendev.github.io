@@ -2,170 +2,262 @@
 <html>
 
 <head>
-    <title>CV Profile</title>
+    <title>Steve - CV profile</title>
     <meta lang="en-US">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
     <style>
-        html,
-        .navbar,
-        .sec02 {
-            background-color: black;
+        .nav-item .nav-link:hover {
+            background-color: orange;
         }
-        .container-fluid,
-        .container {
-            font-size: 30px;
+
+        nav .active {
+            background-color: orange;
         }
-        .hr {
+
+        @media screen and (min-width: 600px) {}
+
+
+
+        .steve-container {
+            display: block;
+            margin: 5px auto 10px;
+        }
+
+        .steve-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .steve-two-row {
+            margin: 10px;
+            width: 300px;
+            height: auto;
+            text-align: center;
+        }
+
+        .steve-text-row {
+            width: 100%;
+
+        }
+
+        .steve-text {
+            font-size: 40px;
+            margin-bottom: 5px;
+
+        }
+
+        .steve-img {
+            width: 100%;
+            height: 300px;
+        }
+
+        @media screen and (min-width: 600px) {
+            .steve-row {
+                flex-direction: row;
+
+            }
+        }
+
+        .card {
+            margin: 5px;
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-header>a {
             color: black;
         }
-        .h2 {
-            font-size: 40px;
+
+        .card-header a h2 {
+            font-size: 30px;
         }
-        .progress,
-        .progess-bar {
-            height: 50px;
+
+        .skill {
+            padding: 5px;
         }
-        .pro01 {
+
+        .skill-container {
+            margin: 10px;
+
+        }
+
+        .skill-text {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .progress {
+            height: 40px;
+        }
+
+        .progress-bar {
+            background-color: black;
+        }
+
+        .skill-office {
             width: 80%;
+
         }
-        .pro02 {
+
+        .skill-html {
             width: 50%;
+
         }
-        .pro03 {
+
+        .skill-css {
             width: 50%;
+
         }
-        .pro04 {
-            width: 100%;
+
+        .skill-lang {
+            width: 80%;
+
         }
-        .ft {
-            font-size: 25px;
+
+        .progress {
+            margin: 10px;
         }
+
+        .project {
+            padding: 5px;
+        }
+
+        .project-container {
+            margin: 10px;
+
+        }
+
+        .project-text {
+            text-align: center;
+            font-size: 30px;
+        }
+        .card-container {
+            margin: 10px;
+        }
+        .card-body > p {
+            margin-top: 10px;
+
+        }
+        footer {
+            padding: 20px;
+        }
+        .bg-secondary > p {
+            margin-bottom: 0;
+        } 
+
     </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-sm sticky-top" id="navbar">
-        <div class="container">
-            <a class="navbar-brand text-light" href="index.html">Steve</a>
-            <button class="navbar-toggler text-warning" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="#home-section" class="nav-link text-light"><span>Home</span></a></li>
-                    <li class="nav-item"><a href="#about-section" class="nav-link text-light"><span>About</span></a>
-                    </li>
-                    <li class="nav-item"><a href="#skills-section" class="nav-link text-light"><span>Skills</span></a>
-                    </li>
-                    <li class="nav-item"><a href="#projects-section"
-                            class="nav-link text-light"><span>Projects</span></a></li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Steve</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Project</a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <section id="home-section">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-center flex-wrap">
-                <div class="align-self-center text-center">
-                    <h1>HELLO!</h1>
-                    <p>I'm Kha, I'm Web Front End Developer.</p>
-                    <p>Nice to meet you!</p>
-                </div>
-                <div>
-                    <img src="lab 2/cv.jpg" alt="CV photo">
-                </div>
-            </div>
-        </div>
-    </section>
     <br>
-    <section id="about-section">
-        <div class="container-fluid sec02">
-            <div class="row justify-content-sm-center text-light">
-                <h2 class="h2">About me</h2>
-                <ul>
-                    <li class="d-flex"><span>Name: Nguyen Anh Kha (Steve Nguyen)</span></li>
-                    <li class="d-flex"><span>Date of birth: April 20, 1993</span></li>
-                    <li class="d-flex"><span>Address: Ho Chi Minh city</span></li>
-                    <li class="d-flex"><span>Email: stevenguyen20041993@gmail.com</span></li>
-                    <li class="d-flex"><span>Phone: +84 374 323 424</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="skills-section">
-        <div>
-            <h2 class="h2 text-center">My skills</h2>
-        </div>
-        <br>
-        <div class="container">
-            <div class="progress">
-                <div class="progress-bar pro01 bg-dark">Office skills</div>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <div class="progress">
-                <div class="progress-bar pro02 bg-dark">HTML</div>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <div class="progress">
-                <div class="progress-bar pro03 bg-dark">CSS</div>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <div class="progress">
-                <div class="progress-bar pro04 bg-dark">JavaScript</div>
-            </div>
-        </div>
-    </section>
+
     <br>
-    <section id="projects-section">
-        <div class="container-fluid sec02">
-            <div>
-                <h2 class="h2 text-center text-light">My Projects</h2>
-            </div>
-            <br>
-            <div class="card-deck">
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <p class="card-text text-warning">Project 1</p>
-                        <a href="/project 1/project1.html" class="btn stretched-link" target="_blank"></a>
+    <section>
+        <div class="steve-container">
+            <div class="steve-row">
+                <div class="steve-two-row">
+                    <div class="steve-text-row">
+                        <p class="steve-text">HELLO!</p>
+                        <p class="steve-text">I'm Steve, I'm Web Front-end Developer.</p>
                     </div>
                 </div>
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <p class="card-text text-warning">Project 2</p>
-                        <a href="#" class="btn stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <p class="card-text text-warning">Project 3</p>
-                        <a href="#" class="btn stretched-link"></a>
-                    </div>
-                </div>
-                <div class="card bg-light">
-                    <div class="card-body text-center">
-                        <p class="card-text text-warning">Project 4</p>
-                        <a href="#" class="btn stretched-link"></a>
+                <div class="steve-two-row">
+                    <div>
+                        <img class="steve-img" src="project 1/img/pro.jpeg" alt="cv img">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="ft">
-        <p class="text-center">Copyright 2020. <span>This template was made with <i class="far fa-heart"></i> by Steve</span></p>
+    <section>
+        <div class="card">
+            <div class="card-header">
+                <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                    <h2>About me</h2>
+                </a>
+            </div>
+            <div id="collapseTwo" class="collapse">
+                <div class="card-body">
+                    <ul>
+                        <li class=""><span>Name:</span> <span>Steve Nguyen</span></li>
+                        <li class=""><span>Date of birth:</span> <span>April 20, 1993</span></li>
+                        <li class=""><span>Address:</span> <span>Ho Chi Minh City</span></li>
+                        <li class=""><span>Email:</span> <span>stevenguyen20041993@gmail.com</span></li>
+                        <li class=""><span>Phone: </span> <span>+84 374 323 424</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="skill">
+        <div class="skill-container">
+            <h2 class="skill-text">Skills</h2>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress">
+                <div class="progress-bar skill-office">Office</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar skill-html">HTML</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar skill-css">CSS</div>
+            </div>
+            <div class="progress">
+                <div class="progress-bar skill-lang">English</div>
+            </div>
+        </div>
+    </section>
+    <section class="project">
+        <div class="project-container">
+            <h2 class="project-text">My Projects</h2>
+        </div>
+        <div class="card-container">
+            <div class="card bg-warning">
+                <div class="card-body text-center">
+                    <p class="card-text">Click to see my projects</p>
+                    <a href="project 1/Home.html" class="stretched-link" alt="my projects" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer class="bg-secondary">
+        <p class="text-center text-light">Copyright 2020.<span> This template was made by Steve with love.</span>
+        </p>
     </footer>
 </body>
+
 </html>

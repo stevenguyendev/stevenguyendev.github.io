@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FINNALA SOFA</title>
+    <meta lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    <style>
+        .nav-item .nav-link:hover {
+            background-color: orange;
+        }
+
+        nav .active {
+            background-color: orange;
+        }
+
+        .breadcrumb {
+            background-color: white;
+            font-size: 10px;
+        }
+
+        .product-container {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .product-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            padding-right: 5px;
+            padding-left: 5px;
+
+        }
+
+        .product-img {
+            margin: 5px;
+            text-align: center;
+        }
+
+        .product-img-thumbnail {
+            width: 300px;
+            height: 300px;
+        }
+
+        .product-information-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin: 10px;
+
+        }
+
+        .product-name {
+            text-decoration: none;
+            text-align: left;
+            font-weight: bold;
+            line-height: 1.2;
+            color: black;
+            font-size: 27px;
+            margin-bottom: 5px;
+        }
+
+        .product-item {
+            margin-top: 0;
+            margin-bottom: 5px;
+
+        }
+
+        .product-price {
+            font-size: 30px;
+            letter-spacing: -2px;
+            font-weight: bold;
+
+        }
+
+        .product-info {
+            padding: 5px;
+
+        }
+
+        .product-info-text {
+            text-align: left;
+        }
+
+        .btn-add-shopping,
+        .btn-add-shopping-list {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .btn-info {
+            color: #fff;
+            background-color: orange;
+            border-color: orange;
+            width: 250px;
+        }
+
+        @media screen and (min-width: 600px) {
+            .breadcrumb {
+                font-size: 1vw;
+            }
+
+            .product-row {
+                flex-direction: row;
+            }
+
+            .product-img {
+                width: 500px;
+                height: 500px;
+            }
+
+            .product-information-container {
+                width: 500px;
+            }
+
+            .product-img-thumbnail {
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        .product-similar {
+            margin-bottom: 15px;
+
+
+        }
+
+        .product-similar-text {
+            text-align: center;
+            font-size: 25px;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+        }
+
+        .product-similar-container {
+            display: block;
+            margin: 5px auto 10px;
+        }
+
+        .product-similar-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-similar-four-row {
+            margin: 10px;
+            width: 180px;
+            height: auto;
+            text-align: center;
+        }
+
+        .product-similar-four-row>a:hover {
+            text-decoration: none;
+        }
+
+        .product-similar-img {
+            width: 100%;
+            height: 170px;
+        }
+
+        .product-similar-text-row {
+            text-decoration: none;
+            text-align: left;
+            font-weight: bold;
+            line-height: 1.2;
+            color: black;
+        }
+
+        .product-similar-text-row>p {
+            margin-bottom: 2px;
+        }
+
+        .product-similar-name {
+            margin-bottom: 1px;
+        }
+
+        .product-similar-item-name {
+            margin-bottom: 2px;
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .product-similar-item-price {
+            margin-bottom: 2px;
+            font-size: 25px;
+            letter-spacing: -2px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) {
+            .flex-container {
+                flex-direction: row;
+            }
+
+            .flex-container>div {
+                width: 200px;
+                margin: 40px;
+            }
+
+            .product-similar-four-row {
+                width: 200px;
+            }
+        }
+
+        footer {
+            padding: 20px;
+        }
+
+        footer ul ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">SGS</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Standard Market</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promotion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pay Check</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div>
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Categories Products</a></li>
+            <li class="breadcrumb-item"><a href="catagory.html" target="_blank">Sofas</a></li>
+            <li class="breadcrumb-item active">FINNALA Sofa</li>
+        </ul>
+    </div>
+    <div class="product-container">
+        <div class="product-row">
+            <div class="product-img">
+                <img src="img/finnala-3-seat-sofa__0570253_PE666208_S5.JPG" alt="FINNALA" class="product-img-thumbnail">
+            </div>
+            <div class="product-information-container">
+                <div>
+                    <p class="product-name">FINNALA <sup><span class="badge badge-danger">NEW</span></sup></p>
+                    <p class="product-item">Sofa, with chaise, Gunnared medium gray</p>
+                    <p class="product-price">$799.00</p>
+                </div>
+                <div class="product-info">
+                    <p class="product-infor-text">
+                        "FINNALA sectional sofa can grow and change with a home and the family.
+                        Choose how many seats, the look and function to create a sofa that suits you.
+                        A clean design and long-lasting comfort are included"
+                    </p>
+                    <div>
+                        <div>
+                            <form>
+                                <select name="quantity" class="custom-select mb-3">
+                                    <option selected>Select Quantity</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="btn-add-shopping">
+                        <a href="#" class="btn btn-info" role="button">Add to shopping bag</a>
+                    </div>
+                    <div class="btn-add-shopping-list">
+                        <a href="#" class="btn btn-info" role="button">Add to shopping wishlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                            Product description
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                        <div class="card-body">
+                            <p>This comfortable sofa has pocket spring seat cushions with high resilience foam and a top
+                                layer of wadding. It provides a nice comfort and support for your body while maintaining
+                                the
+                                shape of the seat cushions.</p>
+                            <p>The sofa's sections can be combined in different ways to get a size and shape that suits
+                                you. If you ever need a larger sofa, you can always add a section or two.</p>
+                            <p>Storage space under the seat. The lid stays open so you can safely and easily take things
+                                in
+                                and out.</p>
+                            <p>You can place the chaise section to the left or right of the sofa, and switch whenever
+                                you
+                                like.</p>
+                            <p>This cover is made of dope-dyed GUNNARED fabric in polyester. It is a durable fabric with
+                                a
+                                wool-like feel, a warm look and a two-toned mélange effect.</p>
+                            <p>The cover is easy to keep clean since it is removable and machine washable.</p>
+                            <p>0-year limited warrranty. Read about the terms in the limited warranty brochure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                            Product size
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="collapse">
+                        <div class="card-body">
+                            <p>Height including back cushions: 33 1/2 "</p>
+                            <p>Backrest height: 28 "</p>
+                            <p>Depth chaise: 64 5/8 "</p>
+                            <p>Width: 99 1/4 "</p>
+                            <p>Depth: 38 5/8 "</p>
+                            <p>Seat depth, chaise lounge: 49 1/4 "</p>
+                            <p>Height under furniture: 2 3/8 "</p>
+                            <p>Armrest width: 5 7/8 "</p>
+                            <p>Armrest height: 28 "</p>
+                            <p>Seat width: 87 3/8 "</p>
+                            <p>Seat depth: 21 5/8 "</p>
+                            <p>Seat height: 18 7/8 "</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                            Care instructions
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="collapse">
+                        <div class="card-body">
+                            <p><strong>Frame</strong>
+                                <p>
+                                    <p>Frame for loveseat section/armrest frame/chaise section frame
+                                        Wipe clean using a damp cloth and a mild cleaner.</p>
+
+                                    <p>Wipe dry with a clean cloth.</p>
+
+                                    <p><strong>Removable cover</strong></p>
+                                    <p>Cover for loveseat section/cover for armrest/cover for chaise section
+                                        Machine wash warm, normal cycle.</p>
+
+                                    <p>To be washed separately.</p>
+
+                                    <p>Do not bleach.</p>
+
+                                    <p>Do not tumble dry.</p>
+
+                                    <p>Iron medium temperature, max 300°F/150°C.</p>
+
+                                    <p>Dry clean any solvent except trichloroethylene.</p>
+
+                                    <p><strong>Removable cover</strong></p>
+                                    <p>Sofa</p>
+                                    <p>Iron high.</p>
+                                    <p>Lining</p>
+                                    <p>Frame for loveseat section/armrest frame/chaise section frame</p>
+                                    <p>Clean with a dust cloth or vacuum lightly using the soft brush attachment.</p>
+
+                                    <p><strong>Cushion</strong></p>
+                                    <p>Seat inner cushion/back inner cushion</p>
+                                    <p>Do not wash.</p>
+
+                                    <p>Do not bleach.</p>
+
+                                    <p>Do not tumble dry.</p>
+
+                                    <p>Do not iron.</p>
+
+                                    <p>Do not dry clean.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <section>
+        <div class="product-similar">
+            <h1 class="product-similar-text">Similar products</h1>
+        </div>
+    </section>
+    <section>
+        <div class="product-similar-container">
+            <div class="product-similar-row">
+                <div class="product-similar-four-row">
+                    <a href="#" alt="sofas">
+                        <div>
+                            <img class="product-similar-img" src="img/finnala1.jpg" alt="finnala">
+                        </div>
+                        <div class="product-similar-text-row">
+                            <p class="product-similar-name">FINNALA Corner<sup><span
+                                        class="badge badge-danger">NEW</span></sup></p>
+                            <p class="product-similar-item-name">Sofas</p>
+                            <p class="product-similar-item-price">$799.00</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-similar-four-row">
+                    <a href="#" alt="sofas">
+                        <div>
+                            <img class="product-similar-img" src="img/finnala2.jpg" alt="finnala">
+                        </div>
+                        <div class="product-similar-text-row">
+                            <p class="product-similar-name">FINNALA Sleeper</p>
+                            <p class="product-similar-item-name">Sleeper</p>
+                            <p class="product-similar-item-price">$499.00</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-similar-four-row">
+                    <a href="#" alt="sofas">
+                        <div>
+                            <img class="product-similar-img" src="img/finnala3.jpg" alt="finnala">
+                        </div>
+                        <div class="product-similar-text-row">
+                            <p class="product-similar-name">FINNALA</p>
+                            <p class="product-similar-item-name">Sleeper</p>
+                            <p class="product-similar-item-price">$569.00</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="product-similar-four-row">
+                    <a href="#" alt="sofas">
+                        <div>
+                            <img class="product-similar-img" src="img/finnala4.jpg" alt="finnala">
+                        </div>
+                        <div class="product-similar-text-row">
+                            <p class="product-similar-name">FINNALA Couch</p>
+                            <p class="product-similar-item-name">Sofa</p>
+                            <p class="product-similar-item-price text-danger">$899.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer class="bg-secondary">
+        <div class="flex-container text-light">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Home</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Our history</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our roots</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Categories Products</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Beds</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Decor items</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Desks</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Dressers</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Living room storages</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Mattresses</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Outdoor furnitures</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Pillows</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="catagory.html" target="_blank">Sofas</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Promotion</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Contact</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Open Jobs</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our branches</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Transits standards</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p class="text-center text-light">Copyright 2020.<span> This template was made by Steve with <i
+                    class="far fa-heart"></i></span>
+        </p>
+    </footer>
+</body>
+
+</html>

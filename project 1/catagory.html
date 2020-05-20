@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sofas - SGS</title>
+    <meta lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .nav-item .nav-link:hover {
+            background-color: orange;
+        }
+
+        nav .active {
+            background-color: orange;
+        }
+
+        .breadcrumb {
+            background-color: white;
+            font-size: 10px;
+        }
+
+        .range-page-title {
+            margin-bottom: 10px;
+        }
+
+        .range-page-title__title {
+            text-align: center;
+            margin: 5px;
+            overflow-wrap: break-word;
+            font-size: 30px;
+            line-height: 1.3;
+        }
+
+        .range-catalog-list__inner {
+            background: #fff;
+        }
+
+        .range-catalog-list__list {
+            margin: 0 auto;
+            columns: 300px 3;
+            column-gap: 0;
+            margin-bottom: 2px;
+            word-break: break-word;
+            list-style: none;
+            padding: 0;
+        }
+
+        .range-catalog-list__list .range-catalog-list__item {
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            line-height: 1.5;
+            min-height: 50px;
+        }
+
+        .range-catalog-list__link {
+            color: #111;
+            position: relative;
+            text-decoration: none;
+            padding: 13px 15px;
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+        @media screen and (min-width: 600px) {
+            .breadcrumb {
+                font-size: 1vw;
+            }
+
+            .range-page-title__title {
+                font-size: 4vw;
+            }
+
+            .range-catalog-list__list {
+                max-width: 902px;
+            }
+
+            .range-catalog-list__list {
+                column-rule: 1px solid #eee;
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+            }
+        }
+
+        .range-product-list {
+            margin-bottom: 2px;
+        }
+
+        .range-product-list-products {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .range-product-list .range-product-list-introduction {
+            flex: 0 0 100%;
+            align-self: center;
+        }
+
+        .catalog-product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .catalog-product {
+            margin: 10px;
+            width: 270px;
+            height: 330px;
+            text-align: center;
+        }
+
+        .catalog-product-img {
+            width: 100%;
+            height: 250px;
+            margin-bottom: 5px;
+        }
+
+        .catalog-product-text {
+            text-decoration: none;
+            text-align: left;
+            font-weight: bold;
+            line-height: 1.2;
+            color: black;
+        }
+
+        .catalog-product-name {
+            margin-bottom: 1px;
+
+        }
+
+        .catalog-product-item-name {
+            margin-bottom: 2px;
+            font-weight: normal;
+            font-size: 12px;
+        }
+
+        .catalog-product-item-price {
+            margin-bottom: 2px;
+            font-size: 25px;
+            letter-spacing: -2px;
+        }
+
+        .catalog-product-item-price-sale {
+            background: #ffce00;
+            padding: .15px .3px;
+            box-shadow: 2px 2px 0 0 #ef4123;
+            margin-right: 175px;
+        }
+
+        .catalog-product>a {
+            text-decoration: none;
+        }
+
+        .catalog-product-count {
+            text-align: center;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .catalog-product-btn-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .catalog-product-btn-container > a:hover {
+            background-color: orange;
+        }
+
+        .btn-info {
+            color: #fff;
+            background-color:gray;
+            border-color:gray;
+        }
+        .catalog-product-back-on-top {
+            text-align: center;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .catalog-product-back-on-top-link {
+            color:orange;
+        }
+        .catalog-product-back-on-top-link:hover {
+            text-decoration: none;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) {
+            .flex-container {
+                flex-direction: row;
+            }
+
+            .flex-container>div {
+                width: 200px;
+                margin: 40px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                max-width: 1350px;
+            }
+
+            .catalog-product {
+                margin: 30px;
+            }
+
+        }
+
+        footer {
+            padding: 20px;
+        }
+
+        footer ul ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">SGS</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categories Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promotion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pay Check</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div>
+        <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Categories Products</a></li>
+            <li class="breadcrumb-item active">Sofas</li>
+        </ul>
+    </div>
+    <section>
+        <div class="range-page-title">
+            <h1 class="range-page-title__title">Sofas</h1>
+        </div>
+        <div class="range-catalog-list">
+            <nav class="range-catalog-list__inner">
+                <ul class="range-catalog-list__list">
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">All sofas</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Fabric sofas</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Leather &amp; coated fabric sofas</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Ottomans</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Sectionals</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Sleeper sofas</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Sofa accessories</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Sofa covers</span>
+                        </a>
+                    </li>
+                    <li class="range-catalog-list__item">
+                        <a href="#" class="range-catalog-list__link">
+                            <span class="range-catalog-list__title">Sofa legs</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="range-product-list">
+            <div class="range-product-list-products">
+                <div class="range-product-list-introduction">
+                    <div class="text">
+                        <p>Taking time to just sit back and relax is one of life’s simple pleasures.
+                            That’s why SGS takes extra care when designing our high quality,
+                            ultra-cozy living room seating and sofas that you can really sink into.
+                            So, when you're feeling truly comfortable and settled in the only thing you
+                            have to worry about is who’s going to refill the snack bowl.
+                        </p>
+                    </div>
+                </div>
+                <div class="catalog-product-list container">
+                    <div class="catalog-product">
+                        <a href="product.html" alt="sofas" target="_blank">
+                            <div>
+                                <img class="catalog-product-img" src="img/finnala-3-seat-sofa__0570253_PE666208_S5.JPG"
+                                    alt="finnala">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">FINNALA <sup><span
+                                            class="badge badge-danger">NEW</span></sup></p>
+                                <p class="catalog-product-item-name">Sofas</p>
+                                <p class="catalog-product-item-price">$799.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/kivik-3-seat.jpg" alt="kivik">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">KIVIK</p>
+                                <p class="catalog-product-item-name">Sectional, 4-seat</p>
+                                <p class="catalog-product-item-price">$849.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/morabo.jpg" alt="morabo">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">MORABO</p>
+                                <p class="catalog-product-item-name">Sofas</p>
+                                <p class="catalog-product-item-price">$699.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/soderhamn.jpg" alt="soderhamn">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">SODERHAMN <sup><span class="badge badge-warning">SALE
+                                            OFF</span></sup></p>
+                                <p class="catalog-product-item-name">Chaise</p>
+                                <p class="catalog-product-item-price catalog-product-item-price-sale">$250.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/ektorp-3-seater.jpg" alt="ektorp">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">EKTORP <sup><span
+                                            class="badge badge-danger">NEW</span></sup></p>
+                                <p class="catalog-product-item-name">Sofas</p>
+                                <p class="catalog-product-item-price">$399.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/gronlid1.jpg" alt="gronlid">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">GRONLID</p>
+                                <p class="catalog-product-item-name">Sectional, 4-seat</p>
+                                <p class="catalog-product-item-price text-danger">$849.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/brathult.jpg" alt="sofas">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">BRATHULT</p>
+                                <p class="catalog-product-item-name">Sectional, 3-seat</p>
+                                <p class="catalog-product-item-price">$369.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/balkarp.jpg" alt="balkarp">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">BALKARP <sup><span
+                                            class="badge badge-danger">NEW</span></sup></p>
+                                <p class="catalog-product-item-name">Sleeper sofa</p>
+                                <p class="catalog-product-item-price">$149.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/alseda.jpg" alt="alseda">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">ALSEDA</p>
+                                <p class="catalog-product-item-name">Stool</p>
+                                <p class="catalog-product-item-price">$49.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/gronlid2.jpg" alt="gronlid">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">GRONLID</p>
+                                <p class="catalog-product-item-name">Sofa</p>
+                                <p class="catalog-product-item-price text-danger">$649.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/vimle.jpg" alt="vimle">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">VIMLE <sup><span class="badge badge-warning">SALE
+                                            OFF</span></sup></p>
+                                <p class="catalog-product-item-name">Sofa</p>
+                                <p class="catalog-product-item-price catalog-product-item-price-sale text-danger">
+                                    $449.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/gronlid3.jpg" alt="gronlid">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">GRONLID</p>
+                                <p class="catalog-product-item-name">Sofa</p>
+                                <p class="catalog-product-item-price">$849.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/karlstad.jpg" alt="karlstad">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">KARLSTAD</p>
+                                <p class="catalog-product-item-name">Sofa</p>
+                                <p class="catalog-product-item-price">$849.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/knopparp.jpg" alt="knopparp">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">KNOPPARP</p>
+                                <p class="catalog-product-item-name">Sofa</p>
+                                <p class="catalog-product-item-price">$349.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/friheten.jpg" alt="friheten">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">FRIHETEN <sup><span
+                                            class="badge badge-danger">NEW</span></sup></p>
+                                <p class="catalog-product-item-name">Sleeper sectional, 3-seat w/storage</p>
+                                <p class="catalog-product-item-price">$599.00</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="catalog-product">
+                        <a href="#" alt="sofas">
+                            <div>
+                                <img class="catalog-product-img" src="img/sandbacken.jpg" alt="sandbacken">
+                            </div>
+                            <div class="catalog-product-text">
+                                <p class="catalog-product-name">SANDBACKEN</p>
+                                <p class="catalog-product-item-name">Sectional, 3-seat</p>
+                                <p class="catalog-product-item-price">$349.00</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <p class="catalog-product-count">Showing 16 of 28</p>
+    </div>
+    <div class="catalog-product-btn-container">
+        <a href="#" class="btn btn-info" role="button">Load More</a>
+    </div>
+    <div class="catalog-product-back-on-top">
+        <a href="#" class="catalog-product-back-on-top-link">Back on top</a>
+    </div>
+    <footer class="bg-secondary">
+        <div class="flex-container text-light">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Home</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Our history</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our roots</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Categories Products</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Beds</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Decor items</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Desks</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Dressers</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Living room storages</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Mattresses</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Outdoor furnitures</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Pillows</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Sofas</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Promotion</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Contact</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Open Jobs</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our branches</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Transits standards</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p class="text-center text-light">Copyright 2020.<span> This template was made by Steve with <i
+                    class="far fa-heart"></i></span>
+        </p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home - SGS</title>
+    <meta lang="en-US">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 190px;
+        }
+       
+        .carousel-caption1 {
+            position: absolute;
+            top: 15px;
+            right: 5%;
+            left: 34%;
+            z-index: 10;
+            padding-bottom: 10px;
+            text-align: left;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+
+        .carousel-caption2 {
+            position: absolute;
+            right: 15%;
+            top: 25px;
+            left: 20%;
+            z-index: 10;
+            padding-bottom: 10px;
+            text-align: left;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .carousel-caption3 {
+            position: absolute;
+            right: 15%;
+            top: 0;
+            left: 15%;
+            z-index: 10;
+            padding-top: 5px;
+            padding-bottom: 20px;
+            color: #fff;
+            text-align: right;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .nav-item .nav-link:hover {
+            background-color: orange;
+        }
+
+        nav .active {
+            background-color: orange;
+        }
+
+        @media screen and (min-width: 600px) {
+            .carousel-caption1, .carousel-caption2, .carousel-caption3 {
+                font-size: 4vw;
+            }
+
+            .carousel-inner img {
+                width: 100%;
+                height: 650px;
+            }
+        }
+
+        .sgs-container {
+            display: block;
+            margin: 5px auto 10px;
+        }
+
+        .sgs-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sgs-four-row {
+            margin: 10px;
+            width: 180px;
+            height: auto;
+            text-align: center;
+        }
+
+        .sgs-img {
+            width: 100%;
+            height: 170px;
+        }
+        .sgs-text-row {
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.2;
+            color: black;
+        }
+
+        .sgs-text-row>p {
+            margin-bottom: 2px;
+        }
+        .sgs-cat-container {
+            display: block;
+            margin: 5px auto 10px;
+        }
+        .sgs-cat-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .sgs-shopbycat {
+            color: black;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 5px;
+        }
+        .sgs-cat {
+            margin: 10px;
+            width: 400px;
+            height: auto;
+            text-align: center;
+        }
+        .sgs-cat-img {
+            width: 100%;
+            height: 320px;
+        }
+        .sgs-cat-text{
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.2;
+            color: black;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .flex-container>div {
+            text-align: left;
+        }
+
+        @media screen and (min-width: 600px) {
+            .flex-container {
+                flex-direction: row;
+            }
+
+            .flex-container>div {
+                width: 200px;
+                margin: 40px;
+            }
+
+            .sgs-four-row {
+                width: 200px;
+            }
+
+            .sgs-img {
+                height: 200px;
+            }
+
+            .sgs-text-row {
+                font-size: 1vw;
+            }
+            .sgs-cat {
+                width: 450px;
+            }
+            .sgs-cat-img {
+                height: 350px;
+            }
+            .sgs-cat-text {
+                font-size: 2vw;
+            }
+        }
+
+        footer {
+            padding: 20px;
+        }
+
+        footer ul ul {
+            list-style-type: none;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">SGS</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categories Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Promotion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pay Check</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/crs1.jpg" alt="living room">
+                <div class="carousel-caption1">
+                    <p class="text-body">Home. The most important place in the world.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/crs2.jpg" alt="bedroom">
+                <div class="carousel-caption2">
+                    <p class="text-light">We're celebrating differently this year.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/crs3.jpg" alt="contact us">
+                <div class="carousel-caption3">
+                    <p class="text-body">Working together to create a safer Home.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <i class="carousel-control-prev-icon"></i>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <i class="carousel-control-next-icon"></i>
+        </a>
+    </div>
+    <br>
+    <section>
+        <div class="sgs-container">
+            <div class="sgs-row">
+                <div class="sgs-four-row">
+                    <a href="#" alt="COVID-19">
+                        <div>
+                            <img class="sgs-img" src="img/apologize.jpg" alt="COVID-19">
+                        </div>
+                        <div class="sgs-text-row">
+                            <p>We apologize - delivery times</p>
+                            <p>are longer than expected</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-four-row">
+                    <a href="#" alt="credit cards">
+                        <div>
+                            <img class="sgs-img" src="img/credit-cards.jpg" alt="credit-cards">
+                        </div>
+                        <div class="sgs-text-row">
+                            <p>Learn more about the SGS</p>
+                            <p>Paid by Credit Cards</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-four-row">
+                    <a href="#" alt="dressers">
+                        <div>
+                            <img class="sgs-img" src="img/dresser.jpg" alt="dressers">
+                        </div>
+                        <div class="sgs-text-row">
+                            <p>Storage across the home</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-four-row">
+                    <a href="#" alt="kitchen">
+                        <div>
+                            <img class="sgs-img" src="img/kitchen.jpg" alt="kitchen">
+                        </div>
+                        <div class="sgs-text-row">
+                            <p>Kitchen</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sgs-cat-container">
+            <h2 class="sgs-shopbycat">Shop by categories</h2>
+            <div class="sgs-cat-row">
+                <div class="sgs-cat">
+                    <a href="#" alt="bed">
+                        <div>
+                            <img class="sgs-cat-img" src="img/bed-cat.jpg" alt="bed">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Beds</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="decor">
+                        <div>
+                            <img class="sgs-cat-img" src="img/decor-cat.jpg" alt="decor">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Decor items</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="desk">
+                        <div>
+                            <img class="sgs-cat-img" src="img/desk-cat.jpg" alt="desk">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Desks</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="dresser">
+                        <div>
+                            <img class="sgs-cat-img" src="img/dresser-cat.jpeg" alt="dresser">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Dressers</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="living">
+                        <div>
+                            <img class="sgs-cat-img" src="img/living-cat.jpg" alt="living">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Living room storage</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="mattress">
+                        <div>
+                            <img class="sgs-cat-img" src="img/mattress-cat.jpg" alt="mattress">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Mattresses</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="outdoor">
+                        <div>
+                            <img class="sgs-cat-img" src="img/outdoor-cat.jpg" alt="outdoor">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Outdoor furnitures</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="#" alt="pillow">
+                        <div>
+                            <img class="sgs-cat-img" src="img/pillow-cat.jpg" alt="pillow">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Pillows</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sgs-cat">
+                    <a href="catagory.html" alt="sofa" target="_blank">
+                        <div>
+                            <img class="sgs-cat-img" src="img/sofa-cat.jpeg" alt="sofa">
+                        </div>
+                        <div class="sgs-cat-text">
+                            <p>Sofas</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        
+    </section>
+    <hr>
+    <footer class="bg-secondary">
+        <div class="flex-container text-light">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Home</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Our history</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our roots</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Categories Products</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">Beds</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Decor items</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Desks</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Dressers</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Living room storages</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Mattresses</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Outdoor furnitures</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Pillows</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="catagory.html" target="_blank">Sofas</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Promotion</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-warning" href="#">Contact</a>
+                        <ul>
+                            <li>
+                                <a class="text-light" href="#">About Us</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Open Jobs</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Our branches</a>
+                            </li>
+                            <li>
+                                <a class="text-light" href="#">Transits standards</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <p class="text-center text-light">Copyright 2020.<span> This template was made by Steve with <i
+                    class="far fa-heart"></i></span>
+        </p>
+    </footer>
+</body>
+
+</html>
